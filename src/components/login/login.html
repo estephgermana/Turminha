@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+
+</head>
+<body>
+    <main>
+        <h2>Login</h2>
+        <div class="form-container">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p>Não tem uma conta? <a href="../cadastro/cadastro.html">Cadastre-se</a></p>
+        </div>
+
+        <!-- Inclusão do Axios para fazer requisições HTTP -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const loginForm = document.getElementById('loginForm');
+
+                loginForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+
+                    const formData = new FormData(loginForm);
+                    const email = formData.get('email');
+                    const senha = formData.get('senha');
+
+                    try {
+                        const response = await axios.post('http://localhost:3000/login', {
+                            email,
+                            senha
+                        });
+
+                        const { nome, accessToken } = response.data;
+
+                        // Salvar o token e nome do usuário no localStorage
+                        localStorage.setItem('accessToken', accessToken);
+                        localStorage.setItem('nomeUsuario', nome);
+
+                        // Redirecionar para index.html
+                        window.location.href = '../index.html';
+
+                    } catch (error) {
+                        console.error('Erro ao fazer login:', error);
+                        alert('E-mail ou senha incorretos');
+                    }
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>

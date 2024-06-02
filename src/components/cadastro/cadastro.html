@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <main>
+        <h2>Cadastro de Usuário</h2>
+        <div class="form-container">
+            <form id="cadastroForm">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+            <p>Já tem uma conta? <a href="../login/login.html">Faça login</a></p>
+        </div>
+
+        <!-- Inclusão do Axios para fazer requisições HTTP -->
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const cadastroForm = document.getElementById('cadastroForm');
+
+                cadastroForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+
+                    const formData = new FormData(cadastroForm);
+                    const nome = formData.get('nome');
+                    const email = formData.get('email');
+                    const senha = formData.get('senha');
+
+                    try {
+                        const response = await axios.post('http://localhost:3000/register', {
+                            nome,
+                            email,
+                            senha
+                        });
+
+                        const { accessToken } = response.data;
+
+                        localStorage.setItem('accessToken', accessToken);
+                        localStorage.setItem('nomeUsuario', nome);
+
+
+                        window.location.href = '../index.html';
+
+                    } catch (error) {
+                        console.error('Erro ao cadastrar usuário:', error);
+                        alert('Erro ao cadastrar usuário. Verifique os dados e tente novamente.');
+                    }
+                });
+            });
+        </script>
+    </main>
+</body>
+</html>
