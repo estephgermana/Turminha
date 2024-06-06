@@ -9,7 +9,7 @@ import { RequestHandler } from 'express-serve-static-core';
 const client = new MongoClient(uri);
 let db: Db;
 
-const secretKey = process.env.JWT_SECRET_KEY || '12315548174154615164145164'; // Use uma chave secreta segura
+const secretKey = process.env.JWT_SECRET_KEY || 'seu-segredo'; // Use uma chave secreta segura
 
 
 
