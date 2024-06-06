@@ -22,12 +22,10 @@
     <nav class="navbar navbar-expand-lg justify-content-end" style="background-color: #C7F2A7; height: 72px;">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img src="imagens/logo_turminha.png" alt="Logo" width="80" height="80"
-                    class="d-inline-block align-text-top">
+                <img src="imagens/logo_turminha.png" alt="Logo" width="80" height="80" class="d-inline-block align-text-top">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,17 +34,16 @@
                         <span class="nav-link active" aria-current="page" id="nomeUsuario"></span>
                     </li>
                     <li class="nav-item">
-                        <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                            aria-controls="offcanvasRight" class="btn">
+                        <a href="carrinho/carrinho.html" class="btn" id="cartIconLink">
                             <i class="bi bi-cart4" style="width: 31px; height: 31px;"></i>
-                        </button>
+                            <span class="badge bg-secondary" id="cartItemCount">0</span> <!-- Número de itens no carrinho -->
+                        </a>
                     </li>
-
+    
                     <li class="nav-item" id="loginButtonContainer">
-                        <a class="btn btn-outline-primary" id="loginButton" href="componentes/login/login.html">Login</a>
+                        <a class="btn btn-outline-primary" id="loginButton" href="login/login.html">Login</a>
                     </li>
-                    
-                    
+    
                     <li class="nav-item">
                         <button type="button" id="btnLogout" class="btn btn-outline-danger d-none">Logout</button>
                     </li>
@@ -54,6 +51,7 @@
             </div>
         </div>
     </nav>
+    
     
     <nav class="navbar" style="background-color: #63A030;; height: 50px;">
         <div class="container-fluid">
@@ -123,272 +121,58 @@
         <img class="trator" src="imagens/trator.png" alt="Trator">
         <h3>Mais Desejados</h3>
     </div>
-    <!-- Carrosel com produtos mais desejados -->
-    <div id="carouselExampleIndicators" class="carousel carousel-dark slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="card-group">
-                    <!-- Boneca da Flora -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;"
-                        hrf="produtos.html">
-                        <div class="imagem-card">
-                            <a href="produtos.html"><img src="imagens/personagem_flora.png" class="card-img-top"
-                                    alt="Boneca da flora"></a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Boneca da Flora</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
+                    <div class="imagem-card">
+                        <a href="produtos.html"><img src="imagens/personagem_flora.png" class="card-img-top"
+                                alt="Boneca da flora"></a>
                     </div>
-                    <!--Boneca da Cacá  -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_cacá.png" class="card-img-top" alt="Boneca da Cacá">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Boneca da Cacá</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!-- Boneco do Zeca -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_zeca.png" class="card-img-top" alt="Boneca do Zeca">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Boneco do Zeca</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!-- Boneco do Vanvan -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_vanvan.png" class="card-img-top" alt="Boneca do Vanvan">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Boneco do Vanvan</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!-- Boneco do Neco -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_neco.png" class="card-img-top" alt="Boneca do Neco">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Boneco do Neco</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Boneca da Flora</h5>
+                        <p class="card-text" id="stockFlora">Carregando...</p> <!-- Estoque será atualizado aqui -->
+                        <p class="card-text"><b class="preco-card" id="priceFlora">Carregando...</b></p>
+                        <input type="hidden" class="productId" value="6661c25d46bf71e7ba4748ff">
+                        <button type="button" class="btn btn-success addToCartButton">Adicione ao carrinho</button>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <!-- Camisa da Flora -->
-                <div class="card-group">
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_flora.png" class="card-img-top" alt="Boneca da flora">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Blusa da Flora</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
+            <div class="col">
+                <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
+                    <div class="imagem-card">
+                        <a href="produtos.html"><img src="imagens/personagem_zeca.png" class="card-img-top"
+                                alt="Boneco do Zeca"></a>
                     </div>
-                    <!--Camisa da Cacá  -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_cacá.png" class="card-img-top" alt="Boneca da Cacá">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Blusa da Cacá</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!-- Camisa do Zeca -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_zeca.png" class="card-img-top" alt="Boneca do Zeca">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Blusa do Zeca</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!-- Camisa do Vanvan -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_vanvan.png" class="card-img-top" alt="Boneca do Vanvan">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Blusa do Vanvan</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!-- Camisa do Neco -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_neco.png" class="card-img-top" alt="Boneca do Neco">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Blusa do Neco</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <!-- Algo da Flora -->
-                <div class="card-group">
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_flora.png" class="card-img-top" alt="Boneca da flora">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Algo da Flora</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!--Algo da Cacá  -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_cacá.png" class="card-img-top" alt="Boneca da Cacá">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Algo da Cacá</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!-- Algo do Zeca -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_zeca.png" class="card-img-top" alt="Boneca do Zeca">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Algo do Zeca</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!-- Algo do Vanvan -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_vanvan.png" class="card-img-top" alt="Boneca do Vanvan">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Algo do Vanvan</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
-                    </div>
-                    <!-- Algo do Neco -->
-                    <div class="card text-center border-light" style="width: 18rem; border-radius: 15px;">
-                        <div class="imagem-card">
-                            <img src="imagens/personagem_neco.png" class="card-img-top" alt="Boneca do Neco">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Algo do Neco</h5>
-                            <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight" class="btn btn-success">Adicione ao carrinho</button>
-                        </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Boneco do Zeca</h5>
+                        <p class="card-text" id="stockZeca">Carregando...</p> <!-- Estoque será atualizado aqui -->
+                        <p class="card-text"><b class="preco-card" id="priceZeca">Carregando...</b></p>
+                        <input type="hidden" class="productId" value="6661c28c46bf71e7ba474900">
+                        <button type="button" class="btn btn-success addToCartButton">Adicione ao carrinho</button>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
+    
+  <!-- Barra de informações -->
+  <div class="info-bar mt-5">
+    <div class="d-flex aling-items-center">
+        <i class="bi bi-cart3"></i>
+        <span class="text-info-bar">Frete Grátis</span>
+    </div>
+    <div class="d-flex aling-items-center">
+        <i class="bi bi-truck"></i>
+        <span class="text-info-bar">Entrega para Todo o Brasil</span>
+    </div>
+    <div class="d-flex aling-items-center">
+        <i class="bi bi-shield-check"></i>
+        <span class="text-info-bar">Compra Segura</span>
+    </div>
+</div>
 
-    <!-- Barra de informações -->
-    <div class="info-bar mt-5">
-        <div class="d-flex aling-items-center">
-            <i class="bi bi-cart3"></i>
-            <span class="text-info-bar">Frete Grátis</span>
-        </div>
-        <div class="d-flex aling-items-center">
-            <i class="bi bi-truck"></i>
-            <span class="text-info-bar">Entrega para Todo o Brasil</span>
-        </div>
-        <div class="d-flex aling-items-center">
-            <i class="bi bi-shield-check"></i>
-            <span class="text-info-bar">Compra Segura</span>
-        </div>
-    </div>
-    <!-- Mais produtos -->
-    <section class="card-carousel-section" style="margin-top: 30px;">
-        <!-- Card 1 -->
-        <div class="carousel-card">
-            <div class="imagem-card">
-                <a href="produtos.html"><img src="imagens/personagem_flora.png" class="card-img-top"
-                        alt="Boneca da flora"></a>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Boneca da Flora</h5>
-                <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight" href="" class="btn btn-success">Adicione ao carrinho</a>
-            </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="carousel-card">
-            <div class="imagem-card">
-                <a href=""><img src="imagens/personagem_cacá.png" class="card-img-top"
-                        alt="Boneca da flora"></a>
-            </div>            <div class="card-body">
-                <h5 class="card-title">Boneco do Cacá</h5>
-                <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight" href="" class="btn btn-success">Adicione ao carrinho</a>
-            </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="carousel-card">
-            <div class="imagem-card">
-                <a href=""><img src="imagens/personagem_neco.png" class="card-img-top"
-                        alt="Boneca da flora"></a>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Boneco do Neco</h5>
-                <p class="card-text"><b class="preco-card">Por R$55,99</b> à vista <br> ou 4x de R$13,97</p>
-                <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-                    aria-controls="offcanvasRight" href="" class="btn btn-success">Adicione ao carrinho</a>
-            </div>
-        </div>
-    </section>
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -416,42 +200,83 @@
         </div>
     </footer>
 
-    <!-- Carrinho de compras -->
-
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrinho</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="content-cart" id="carrinho">
-                <!-- Esta div será preenchida dinamicamente com os produtos -->
-            </div>
-            <div class="box">
-                <header>Resumo da compra</header>
-                <div class="info">
-                    <div><span>Sub-total</span><span class="preco-carrinho-sub-total">R$ 0,00</span></div>
-                    <div><span>Calcule o frete</span></div>
-                    <div>
-                        <input type="text" class="form-control" placeholder="Digite o CEP" aria-label="CEP" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="bi bi-plus"></i></button>
-                    </div>
-                </div>
-                <footer>
-                    <span>Total</span>
-                    <span class="preco-carrinho-total">R$ 0,00</span>
-                </footer>
-            </div>
-            <a href="#" id="btnFinalizarCompra" class="btn-finalizar-compra">Comprar</a>
-
-        </div>
-    </div>
-    
-
-    
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+           
+            async function fetchProducts() {
+                try {
+                    const response = await axios.get('http://localhost:3000/products'); 
+                    console.log('Produtos recebidos:', response.data);
+                    return response.data;
+                } catch (error) {
+                    console.error('Erro ao buscar produtos:', error);
+                    return [];
+                }
+            }
+        
+            function updateStockAndPrice(products) {
+                products.forEach(product => {
+                    const stockText = product.stock > 0 ? `Estoque: ${product.stock}` : 'Indisponível';
+                    const priceText = `Por R$${product.price.toFixed(2)}`;
+                    if (product._id === '6661c25d46bf71e7ba4748ff') {
+                        document.getElementById('stockFlora').textContent = stockText;
+                        document.getElementById('priceFlora').textContent = priceText;
+                    } else if (product._id === '6661c28c46bf71e7ba474900') {
+                        document.getElementById('stockZeca').textContent = stockText;
+                        document.getElementById('priceZeca').textContent = priceText;
+                    }
+                });
+            }
+        
+            function updateCartItemCount(count) {
+                const cartItemCountElement = document.getElementById('cartItemCount');
+                cartItemCountElement.textContent = count.toString();
+            }
+        
+            async function addToCart(productId, quantity) {
+                const token = localStorage.getItem('accessToken');
+                const config = {
+                    headers: { Authorization: `Bearer ${token}` }
+                };
+    
+                try {
+                    const response = await axios.post('http://localhost:3000/cart/', {
+                        productId,
+                        quantity
+                    }, config);
+    
+                    const { success } = response.data;
+                    if (success) {
+                        let currentCount = parseInt(document.getElementById('cartItemCount').textContent);
+                        currentCount++;
+                        updateCartItemCount(currentCount);
+                        alert('Produto adicionado ao carrinho!');
+                    } else {
+                        alert('Erro ao adicionar produto ao carrinho.');
+                    }
+                } catch (error) {
+                    console.error('Erro ao adicionar produto ao carrinho:', error);
+                    alert('Erro ao adicionar produto ao carrinho.');
+                }
+            }
+        
+            const products = await fetchProducts();
+            updateStockAndPrice(products);
+        
+            const addToCartButtons = document.querySelectorAll('.addToCartButton');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const productId = button.parentElement.querySelector('.productId').value;
+                    addToCart(productId, 1);
+                });
+            });
+        
+            const cartIconLink = document.getElementById('cartIconLink');
+            cartIconLink.addEventListener('click', () => {
+                window.location.href = 'carrinho/carrinho.html';
+            });
+
+           
             const nomeUsuario = localStorage.getItem('nomeUsuario');
             const loginButton = document.getElementById('loginButton');
             const btnLogout = document.getElementById('btnLogout');
@@ -482,11 +307,7 @@
             }
         });
     </script>
-    
-    
 
-    <script src="script.js"></script>
-  
 
 </body>
 
